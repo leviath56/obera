@@ -14,11 +14,12 @@ property
     ;
 
 value
-    : STRING                  // String values
-    | NUMBER                  // Numeric values
-    | BOOLEAN                 // Boolean values
-    | array                   // Array values
-    | IDENTIFIER              // Variable references
+    : STRING                  # StringValue
+    | NUMBER                  # NumberValue
+    | BOOLEAN                 # BooleanValue
+    | array                   # ArrayValue
+    | IDENTIFIER              # IdentifierValue
+    | STRING_INTERPOLATION    # StringInterpolationValue
     ;
 
 array
@@ -26,10 +27,11 @@ array
     ;
 
 // Lexer rules
-IDENTIFIER  : [a-zA-Z_][a-zA-Z0-9_-]* ;
-STRING      : '"' (~["\r\n] | '\\"')* '"' ;
-NUMBER      : [0-9]+ ('.' [0-9]+)? ;
-BOOLEAN     : 'true' | 'false' ;
+IDENTIFIER          : [a-zA-Z_][a-zA-Z0-9_-]* ;
+STRING              : '"' (~["\r\n] | '\\"')* '"' ;
+STRING_INTERPOLATION: '"' (~["\r\n$] | '\\"' | '${' .*? '}')* '"' ;
+NUMBER              : [0-9]+ ('.' [0-9]+)? ;
+BOOLEAN             : 'true' | 'false' ;
 
 LCURLY      : '{' ;
 RCURLY      : '}' ;
