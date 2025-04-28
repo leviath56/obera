@@ -1,0 +1,25 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore virtual environment
+.venv/
+
+logs/
+output/
+antlr/
+tests/*.txt
+
+# Ignore generated parser files (if any inside src/compiled)
+src/compiled/
+
+
+# IDE / Editor files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
