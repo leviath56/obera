@@ -1,34 +1,32 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 const Toolbar: React.FC = () => {
+  const [mode, setMode] = useState<"code" | "preview">("code");
+
   return (
-    <div className="bg-white p-2 flex justify-between items-center border-b border-gray-200">
-      <div className="flex space-x-1">
-        <button className="p-1 bg-gray-100 rounded hover:bg-gray-200">
-          <span className="text-gray-600">⟳</span>
-        </button>
-        <button className="p-1 bg-gray-100 rounded hover:bg-gray-200">
-          <span className="text-gray-600">↺</span>
-        </button>
-        <button className="p-1 bg-gray-100 rounded hover:bg-gray-200">
-          <span className="text-gray-600">▶</span>
-        </button>
-      </div>
-      <div className="flex space-x-2">
-        <button className="px-3 py-1 bg-gray-100 rounded hover:bg-gray-200 text-gray-600">
-          Code
-        </button>
-        <button className="px-3 py-1 bg-gray-300 rounded text-gray-800 font-semibold">
-          Preview
-        </button>
-        <div className="flex space-x-2">
-          <button className="p-1 bg-gray-100 rounded hover:bg-gray-200 flex items-center text-gray-600">
-            <span className="mr-1">📋</span> Copy code
+    <div className="flex justify-between items-start p-4 bg-white border-b border-gray-200">
+    
+
+      {/* Top Right Buttons */}
+      <div className="flex items-start space-x-2">
+        {/* Icons */}
+        <div className="flex space-x-2 mt-1">
+          <button className="p-2 rounded-full hover:bg-gray-100 border">
+            ↺
           </button>
-          <button className="p-1 bg-gray-100 rounded hover:bg-gray-200 flex items-center text-gray-600">
-            <span className="mr-1">💾</span> Export
+          <button className="p-2 rounded-full hover:bg-gray-100 border">
+            ⟳
+          </button>
+          <button className="p-2 rounded-full hover:bg-gray-100 border">
+            ▶
           </button>
         </div>
+
+
+
+
       </div>
     </div>
   );
