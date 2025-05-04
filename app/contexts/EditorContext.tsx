@@ -26,7 +26,7 @@ export const EditorProvider = ({ children }: { children: React.ReactNode }) => {
     grammar: "",
     generatedCode: "",
     previewHtml: "",
-    activeTab: "code",
+    activeTab: "preview",
     isLoading: false,
     error: null,
   });

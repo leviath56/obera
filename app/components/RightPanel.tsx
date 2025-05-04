@@ -10,25 +10,19 @@ const RightPanel = () => {
   const { activeTab, generatedCode } = useEditor();
 
   return (
-    <div className="h-full flex flex-col bg-white rounded-lg shadow-sm overflow-hidden">
-      {/* Header with centered toggle and right dropdown */}
+    <div className="h-full flex flex-col bg-white rounded-2xl shadow-sm overflow-hidden border-2 border-gray-300"> 
+      {/* Header with controls */}
       <div className="p-2 bg-gray-50 flex items-center justify-between">
         <div className="flex-1 flex justify-center">
           <ToggleSwitch />
         </div>
-        <DropdownMenu />
-      </div>
-      
-      {/* Expanded content area */}
+        <div className="hover:bg-gray-100 rounded-full transition-colors duration-200">
+          <DropdownMenu />
+        </div>
+      </div>     
+      {/* Content area */}
       <CodePreview />
-      
-      {/* Status bar */}
-      <div className="px-3 py-1 bg-gray-50 text-xs text-gray-500">
-        {activeTab === "code"
-          ? `${generatedCode.split('\n').length} lines of generated code`
-          : "HTML Preview"}
       </div>
-    </div>
   );
 };
 

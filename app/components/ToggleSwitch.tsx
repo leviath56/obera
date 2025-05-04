@@ -10,16 +10,6 @@ const ToggleSwitch = () => {
     <div className="bg-gray-200 rounded-full p-1 flex shadow-inner">
       <button
         className={`px-6 py-1 rounded-full text-sm font-medium transition ${
-          activeTab === "code"
-            ? "bg-white shadow-sm text-gray-800"
-            : "text-gray-600 hover:bg-gray-300"
-        }`}
-        onClick={() => setActiveTab("code")}
-      >
-        Code
-      </button>
-      <button
-        className={`px-6 py-1 rounded-full text-sm font-medium transition ${
           activeTab === "preview"
             ? "bg-white shadow-sm text-gray-800"
             : "text-gray-600 hover:bg-gray-300"
@@ -27,6 +17,16 @@ const ToggleSwitch = () => {
         onClick={() => setActiveTab("preview")}
       >
         Preview
+      </button>
+      <button
+        className={`px-6 py-1 rounded-full text-sm font-medium transition ${
+          activeTab === "code"
+            ? "bg-white shadow-sm text-gray-800"
+            : "text-gray-600 hover:bg-gray-300"
+        }`}
+        onClick={() => setActiveTab("code")}
+      >
+        Code
       </button>
     </div>
   );
